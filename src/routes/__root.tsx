@@ -80,11 +80,15 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { title: "Thales Ataíde · Advogado Previdenciário e de Família — OAB/ES 40.851" },
       { name: "description", content: "Advocacia humana e acessível em Direito Previdenciário e de Família. Atendimento presencial na Grande Vitória/ES e online em todo o Brasil." },
       { name: "author", content: "Thales de Ataíde Evangelista" },
-      { property: "og:title", content: "Thales Ataíde · Advogado Previdenciário e de Família" },
-      { property: "og:description", content: "Direcionamento estratégico com empatia. OAB/ES 40.851." },
+      { property: "og:title", content: "Thales Ataíde · Advogado Previdenciário e de Família — OAB/ES 40.851" },
+      { property: "og:description", content: "Advocacia humana e acessível em Direito Previdenciário e de Família. Atendimento presencial na Grande Vitória/ES e online em todo o Brasil." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:site", content: "@adv.thalesataide" },
+      { name: "twitter:title", content: "Thales Ataíde · Advogado Previdenciário e de Família — OAB/ES 40.851" },
+      { name: "twitter:description", content: "Advocacia humana e acessível em Direito Previdenciário e de Família. Atendimento presencial na Grande Vitória/ES e online em todo o Brasil." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/10fee32b-67f7-4ff1-bd23-7d1cbd3ece0f/id-preview-b76af2c7--277e257d-9ac1-43ab-8b2f-745d15b75051.lovable.app-1782946235403.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/10fee32b-67f7-4ff1-bd23-7d1cbd3ece0f/id-preview-b76af2c7--277e257d-9ac1-43ab-8b2f-745d15b75051.lovable.app-1782946235403.png" },
     ],
     links: [
       {
