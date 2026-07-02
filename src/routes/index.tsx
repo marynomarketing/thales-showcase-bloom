@@ -44,11 +44,11 @@ function Index() {
   useReveal();
   return (
     <div className="min-h-screen bg-navy-deep text-offwhite overflow-x-hidden">
+      <TopBar />
       <Header />
       <Hero />
       <Marquee />
       <Comparison />
-      <Honorarios />
       <Acompanhamento />
       <Processo />
       <Sobre />
@@ -56,6 +56,25 @@ function Index() {
       <CtaFinal />
       <Footer />
       <FloatingWhatsapp />
+    </div>
+  );
+}
+
+/* ------------------------------- Top bar -------------------------------- */
+
+function TopBar() {
+  return (
+    <div className="fixed inset-x-0 top-0 z-50 hidden md:flex items-center justify-center gap-2 bg-navy-deep/90 backdrop-blur-sm border-b border-offwhite/10 py-2 text-xs text-offwhite/70 font-sans">
+      <span>Atendimento especializado em Direito Previdenciário e de Família</span>
+      <span className="text-offwhite/30">·</span>
+      <a
+        href={WHATSAPP}
+        target="_blank"
+        rel="noreferrer"
+        className="inline-flex items-center gap-1.5 text-champagne hover:text-beige transition-colors"
+      >
+        <Phone className="size-3.5" /> (27) 99955-9615
+      </a>
     </div>
   );
 }
@@ -72,7 +91,7 @@ function Header() {
   }, []);
   return (
     <header
-      className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 ${
+      className={`fixed inset-x-0 top-0 md:top-9 z-50 transition-all duration-500 ${
         scrolled
           ? "bg-navy-deep/85 backdrop-blur-lg border-b border-offwhite/10"
           : "bg-transparent"
@@ -125,16 +144,16 @@ function Hero() {
       <img
         src={heroPhoto}
         alt="Thales de Ataíde Evangelista, advogado"
-        className="absolute inset-0 -z-20 h-full w-full object-cover object-[70%_center]"
+        className="absolute inset-0 -z-20 h-full w-full object-cover object-[30%_15%]"
       />
-      {/* Left-to-right darkening for text legibility */}
-      <div className="absolute inset-0 -z-10 bg-gradient-to-r from-navy-deep via-navy-deep/70 to-navy-deep/20" />
+      {/* Darkening toward the right, where the contact card sits */}
+      <div className="absolute inset-0 -z-10 bg-gradient-to-r from-navy-deep/35 via-navy-deep/55 to-navy-deep/95" />
       {/* Bottom black gradient */}
       <div className="absolute inset-x-0 bottom-0 -z-10 h-2/3 bg-gradient-to-t from-black via-black/60 to-transparent" />
       {/* Top gradient so header stays legible */}
-      <div className="absolute inset-x-0 top-0 -z-10 h-40 bg-gradient-to-b from-black/50 to-transparent" />
+      <div className="absolute inset-x-0 top-0 -z-10 h-48 bg-gradient-to-b from-black/60 to-transparent" />
 
-      <div className="relative mx-auto grid min-h-screen max-w-7xl grid-cols-1 gap-10 px-6 pt-28 pb-14 lg:grid-cols-12 lg:gap-8">
+      <div className="relative mx-auto grid min-h-screen max-w-7xl grid-cols-1 gap-10 px-6 pt-36 pb-10 lg:grid-cols-12 lg:gap-8">
         {/* Left: headline over photo */}
         <div className="flex flex-col justify-end lg:col-span-7 reveal">
           <div className="inline-flex w-fit items-center gap-2 rounded-full liquid-glass px-4 py-1.5 text-[11px] uppercase tracking-[0.3em] text-champagne">
@@ -164,7 +183,26 @@ function Hero() {
           <HeroForm />
         </div>
       </div>
+
+      {/* Bottom trust badges strip */}
+      <div className="relative border-t border-offwhite/10 bg-black/40 backdrop-blur-sm">
+        <div className="mx-auto grid max-w-7xl grid-cols-2 gap-4 px-6 py-4 text-[11px] text-offwhite/70 font-sans md:grid-cols-4">
+          <TrustBadge icon={ShieldCheck} label="Honorários fixos e transparentes" />
+          <TrustBadge icon={Sparkles} label="Resposta em até 24h" />
+          <TrustBadge icon={MessageCircle} label="100% online, sem sair de casa" />
+          <TrustBadge icon={HeartHandshake} label="Atendimento humanizado" />
+        </div>
+      </div>
     </section>
+  );
+}
+
+function TrustBadge({ icon: Icon, label }: { icon: typeof ShieldCheck; label: string }) {
+  return (
+    <div className="flex items-center gap-2">
+      <Icon className="size-4 shrink-0 text-champagne" />
+      <span>{label}</span>
+    </div>
   );
 }
 
@@ -369,55 +407,6 @@ function ComparisonCard({
         ))}
       </ul>
     </div>
-  );
-}
-
-/* ----------------------------- Honorarios ------------------------------ */
-
-function Honorarios() {
-  return (
-    <section className="mx-auto max-w-7xl px-6 pb-24 reveal">
-      <div className="liquid-glass rounded-3xl p-8 md:p-14 grid md:grid-cols-12 gap-8 items-center">
-        <div className="md:col-span-7">
-          <p className="font-sans text-xs uppercase tracking-[0.35em] text-beige">
-            Transparência
-          </p>
-          <h2 className="mt-3 font-display text-3xl md:text-4xl font-medium text-offwhite leading-tight">
-            Honorários claros.
-            <br />
-            <span className="text-beige">Sem surpresas.</span>
-          </h2>
-          <p className="mt-4 text-offwhite/65 font-sans font-light max-w-lg">
-            Antes de qualquer contrato, você entende exatamente o que será
-            feito, quanto custa e por quê. Nada de cobranças escondidas —
-            respeito começa pelo bolso do cliente.
-          </p>
-        </div>
-        <div className="md:col-span-5">
-          <div className="liquid-glass rounded-2xl p-6">
-            <div className="flex items-center gap-3">
-              <div className="grid size-11 place-items-center rounded-xl bg-beige/15 text-beige">
-                <Sparkles className="size-5" />
-              </div>
-              <div>
-                <div className="font-display text-lg font-medium text-offwhite">
-                  Consulta inicial guiada
-                </div>
-                <div className="text-xs text-offwhite/55">
-                  Sem compromisso · Sem venda agressiva
-                </div>
-              </div>
-            </div>
-            <a href={WHATSAPP} target="_blank" rel="noreferrer">
-              <Button className="btn-glow mt-5 h-11 w-full rounded-full bg-navy hover:bg-navy-deep text-offwhite">
-                Solicitar orientação
-                <ArrowRight className="ml-2 size-4" />
-              </Button>
-            </a>
-          </div>
-        </div>
-      </div>
-    </section>
   );
 }
 
@@ -713,13 +702,28 @@ function CtaFinal() {
               aberto. Converse comigo hoje mesmo — sem compromisso.
             </p>
           </div>
-          <div className="md:col-span-4 flex md:justify-end">
-            <a href={WHATSAPP} target="_blank" rel="noreferrer" className="block">
-              <Button className="btn-glow h-14 rounded-full bg-beige hover:bg-champagne text-navy hover:text-navy-deep font-medium px-7 text-base">
-                <MessageCircle className="mr-2 size-5" />
-                Solicitar orientação
-              </Button>
-            </a>
+          <div className="md:col-span-4">
+            <div className="liquid-glass rounded-2xl p-6">
+              <div className="flex items-center gap-3">
+                <div className="grid size-11 place-items-center rounded-xl bg-beige/15 text-beige">
+                  <Sparkles className="size-5" />
+                </div>
+                <div>
+                  <div className="font-display text-lg font-medium text-offwhite">
+                    Consulta inicial guiada
+                  </div>
+                  <div className="text-xs text-offwhite/55">
+                    Sem compromisso · Sem venda agressiva
+                  </div>
+                </div>
+              </div>
+              <a href={WHATSAPP} target="_blank" rel="noreferrer">
+                <Button className="btn-glow mt-5 h-11 w-full rounded-full bg-navy hover:bg-navy-deep text-offwhite">
+                  Solicitar orientação
+                  <ArrowRight className="ml-2 size-4" />
+                </Button>
+              </a>
+            </div>
           </div>
         </div>
       </div>
