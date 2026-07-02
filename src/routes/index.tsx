@@ -177,7 +177,7 @@ function Hero() {
         </div>
 
         {/* Right: floating contact card, centered and pulled in toward him */}
-        <div className="flex flex-col justify-center lg:col-span-3 lg:-ml-16 reveal">
+        <div className="flex flex-col justify-center lg:col-span-3 lg:-ml-24 lg:mt-16 reveal">
           <HeroForm />
         </div>
       </div>
