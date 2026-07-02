@@ -526,7 +526,7 @@ function Processo() {
 
 function Sobre() {
   return (
-    <section id="sobre" className="mx-auto max-w-7xl px-6 py-24 reveal">
+    <section id="sobre" className="mx-auto max-w-7xl px-6 pt-24 pb-8 reveal">
       <div className="grid md:grid-cols-12 gap-10 items-center">
         <div className="md:col-span-5">
           <div className="relative overflow-hidden rounded-[28px] border border-offwhite/10 shadow-[0_30px_80px_-40px_rgba(15,26,38,0.4)]">
@@ -608,7 +608,7 @@ function Depoimentos() {
   const data = [
     {
       quote:
-        "Eu chegou perdida, sem entender por que meu benefício foi negado. Ele explicou cada passo, pela primeira vez me senti ouvida.",
+        "Eu cheguei perdida, sem entender por que meu benefício foi negado. Ele explicou cada passo, pela primeira vez me senti ouvida.",
       name: "Cliente · Previdenciário",
     },
     {
@@ -623,7 +623,7 @@ function Depoimentos() {
     },
   ];
   return (
-    <section id="depoimentos" className="mx-auto max-w-7xl px-6 py-24 reveal">
+    <section id="depoimentos" className="mx-auto max-w-7xl px-6 pt-8 pb-24 reveal">
       <div className="text-center">
         <p className="font-sans text-xs uppercase tracking-[0.35em] text-beige">
           Confiança
@@ -652,10 +652,6 @@ function Depoimentos() {
           </div>
         ))}
       </div>
-      <p className="mt-6 text-center text-[11px] text-offwhite/45 font-sans">
-        Depoimentos ilustrativos · Conforme Provimento OAB 205/2021, casos não
-        são divulgados como oferta ou promessa de resultado.
-      </p>
     </section>
   );
 }
@@ -676,7 +672,7 @@ function CtaFinal() {
         <div className="relative grid md:grid-cols-12 gap-8 p-10 md:p-16 items-center">
           <div className="md:col-span-8">
             <p className="font-sans text-xs uppercase tracking-[0.35em] text-beige">
-              Antes que seja tarde
+              Não deixe para depois
             </p>
             <h2 className="mt-4 font-display text-4xl md:text-5xl font-medium text-offwhite leading-[1.05]">
               Cada dia sem orientação
@@ -697,16 +693,16 @@ function CtaFinal() {
                 </div>
                 <div>
                   <div className="font-display text-lg font-medium text-offwhite">
-                    Consulta inicial guiada
+                    Agende seu atendimento
                   </div>
                   <div className="text-xs text-offwhite/55">
-                    Sem compromisso · Sem venda agressiva
+                    Sem compromisso
                   </div>
                 </div>
               </div>
               <a href={WHATSAPP} target="_blank" rel="noreferrer">
-                <Button className="btn-glow mt-5 h-11 w-full rounded-full bg-navy hover:bg-navy-deep text-offwhite">
-                  Solicitar orientação
+                <Button className="btn-glow mt-5 h-11 w-full rounded-full bg-navy hover:bg-beige hover:text-navy-deep text-offwhite">
+                  Fale comigo agora
                   <ArrowRight className="ml-2 size-4" />
                 </Button>
               </a>
