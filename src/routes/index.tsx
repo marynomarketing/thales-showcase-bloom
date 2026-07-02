@@ -435,7 +435,7 @@ function Acompanhamento() {
           que depende de você.
         </p>
       </div>
-      <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-4">
+      <div className="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
         <div className="md:row-span-2 liquid-glass backdrop-blur-xl backdrop-saturate-200 rounded-3xl p-8 text-offwhite relative overflow-hidden">
           <div className="absolute -right-16 -bottom-16 size-64 rounded-full bg-beige/20 blur-3xl" />
           <div className="relative">
