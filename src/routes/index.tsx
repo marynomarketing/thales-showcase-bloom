@@ -93,7 +93,7 @@ function Header() {
     <header
       className={`fixed inset-x-0 top-0 md:top-9 z-50 transition-all duration-500 ${
         scrolled
-          ? "bg-navy-deep/85 backdrop-blur-lg border-b border-offwhite/10"
+          ? "bg-navy-deep/90 backdrop-blur-sm border-b border-offwhite/10"
           : "bg-transparent"
       }`}
     >
