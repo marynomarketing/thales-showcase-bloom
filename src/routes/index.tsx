@@ -139,23 +139,24 @@ function Header() {
 
 function Hero() {
   return (
-    <section id="top" className="relative isolate min-h-[150vh] md:min-h-[138vh] overflow-hidden">
+    <section id="top" className="relative isolate min-h-[105vh] lg:min-h-[140vh] overflow-hidden">
       {/* Full-bleed background photo, kept fully clear/bright */}
       <img
         src={heroPhoto}
         alt="Thales de Ataíde Evangelista, advogado"
-        className="absolute inset-0 -z-20 h-full w-full object-cover object-[30%_2%]"
+        className="absolute inset-0 -z-20 h-full w-full object-cover object-[33%_12%] lg:object-[30%_2%]"
       />
       {/* Bottom black gradient, only behind the text block so the photo stays clear up top */}
-      <div className="absolute inset-x-0 bottom-0 -z-10 h-[40%] bg-gradient-to-t from-black via-black/70 to-transparent" />
+      <div className="absolute inset-x-0 bottom-0 -z-10 h-[62%] lg:h-[40%] bg-gradient-to-t from-black via-black/70 to-transparent" />
 
-      <div className="relative mx-auto grid min-h-[150vh] md:min-h-[138vh] max-w-7xl grid-cols-1 gap-6 px-6 pt-16 pb-16 lg:grid-cols-12 lg:gap-4">
-        {/* Left: headline, pinned to the bottom so it never sits over his face */}
-        <div className="flex flex-col justify-end lg:col-span-8 reveal">
+      {/* Content: simple top-padded flow on mobile, bottom-pinned grid on desktop */}
+      <div className="relative mx-auto max-w-7xl px-6 pt-[48vh] pb-10 lg:grid lg:grid-cols-12 lg:gap-4 lg:min-h-[140vh] lg:pt-16 lg:pb-16">
+        {/* Headline, always well below where his face sits */}
+        <div className="lg:flex lg:flex-col lg:justify-end lg:col-span-8 reveal">
           <p className="text-[10px] uppercase tracking-[0.3em] text-beige/80">
             Advogado Especialista
           </p>
-          <h1 className="mt-2 font-display text-[34px] leading-[1.06] md:text-[52px] font-medium text-offwhite tracking-[-0.02em]">
+          <h1 className="mt-2 font-display text-[30px] leading-[1.08] md:text-[52px] font-medium text-offwhite tracking-[-0.02em]">
             O primeiro passo
             <br />
             <span className="text-beige">começa agora.</span>
@@ -176,15 +177,15 @@ function Hero() {
           </div>
         </div>
 
-        {/* Right: floating contact card, centered and pulled in toward him */}
-        <div className="flex flex-col justify-center lg:col-span-3 lg:-ml-24 lg:mt-16 reveal">
+        {/* Contact card: flows normally below on mobile, floats centered/pulled-in on desktop */}
+        <div className="mt-8 lg:mt-0 lg:flex lg:flex-col lg:justify-center lg:col-span-3 lg:-ml-24 reveal">
           <HeroForm />
         </div>
       </div>
 
       {/* Bottom trust badges strip */}
       <div className="relative border-t border-offwhite/10 bg-black/40 backdrop-blur-sm">
-        <div className="mx-auto grid max-w-7xl grid-cols-2 gap-4 px-6 py-4 text-[11px] text-offwhite/70 font-sans md:grid-cols-4">
+        <div className="mx-auto grid max-w-7xl grid-cols-2 gap-x-4 gap-y-5 px-6 py-5 text-xs text-offwhite/70 font-sans md:grid-cols-4">
           <TrustBadge icon={ShieldCheck} label="Honorários fixos e transparentes" />
           <TrustBadge icon={Sparkles} label="Resposta em até 24h" />
           <TrustBadge icon={MessageCircle} label="Presencial e online" />
@@ -199,7 +200,7 @@ function TrustBadge({ icon: Icon, label }: { icon: typeof ShieldCheck; label: st
   return (
     <div className="flex items-center gap-2">
       <Icon className="size-4 shrink-0 text-beige" />
-      <span>{label}</span>
+      <span className="leading-tight">{label}</span>
     </div>
   );
 }
@@ -357,7 +358,7 @@ function Marquee() {
 
 function Comparison() {
   return (
-    <section className="mx-auto max-w-7xl px-6 py-24 reveal">
+    <section className="mx-auto max-w-7xl px-6 py-14 md:py-24 reveal">
       <div className="text-center max-w-2xl mx-auto">
         <p className="font-sans text-xs uppercase tracking-[0.35em] text-beige">
           Sua causa merece
@@ -367,11 +368,11 @@ function Comparison() {
         </h2>
         <p className="mt-4 text-offwhite/60 font-sans font-light">
           A diferença entre se sentir mais um número e ser tratado como pessoa
-          <br />
-          começa no primeiro atendimento.
+          <br className="hidden md:inline" />
+          {" "}começa no primeiro atendimento.
         </p>
       </div>
-      <div className="mt-14 grid gap-6 md:grid-cols-2">
+      <div className="mt-8 md:mt-14 grid gap-6 md:grid-cols-2">
         <ComparisonCard
           tone="pain"
           title="Sem orientação"
@@ -461,13 +462,13 @@ function Acompanhamento() {
     { icon: Sparkles, title: "Blindagem", desc: "Orientação preventiva para que o problema não volte a acontecer." },
   ];
   return (
-    <section className="mx-auto max-w-7xl px-6 pb-24 reveal">
+    <section className="mx-auto max-w-7xl px-6 pb-14 md:pb-24 reveal">
       <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
         <div>
           <h2 className="font-display text-4xl md:text-5xl font-medium text-offwhite leading-[1.05]">
             Transparência em cada
-            <br />
-            etapa do <span className="text-beige">processo</span>.
+            <br className="hidden md:inline" />
+            {" "}etapa do <span className="text-beige">processo</span>.
           </h2>
         </div>
         <p className="max-w-md text-offwhite/60 font-sans font-light">
@@ -475,7 +476,7 @@ function Acompanhamento() {
           que depende de você.
         </p>
       </div>
-      <div className="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+      <div className="mt-8 md:mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
         <div className="md:row-span-2 liquid-glass backdrop-blur-xl backdrop-saturate-150 rounded-3xl p-8 text-offwhite relative overflow-hidden">
           <div className="relative">
             <div className="text-beige font-display text-6xl font-medium leading-none">
@@ -523,7 +524,7 @@ function Processo() {
     { n: "04", title: "Acompanhamento", desc: "Presença ativa até o desfecho e depois dele." },
   ];
   return (
-    <section id="processo" className="bg-navy text-offwhite py-24 relative overflow-hidden reveal">
+    <section id="processo" className="bg-navy text-offwhite py-14 md:py-24 relative overflow-hidden reveal">
       <div className="absolute inset-0 opacity-[0.06] pointer-events-none" style={{
         backgroundImage:
           "radial-gradient(circle at 20% 30%, #E7D6AC 0, transparent 40%), radial-gradient(circle at 80% 70%, #A8895F 0, transparent 40%)",
@@ -538,7 +539,7 @@ function Processo() {
           Do primeiro <span className="text-beige">contato</span> ao
           resultado.
         </h2>
-        <div className="mt-14 grid grid-cols-1 md:grid-cols-4 gap-6">
+        <div className="mt-8 md:mt-14 grid grid-cols-1 md:grid-cols-4 gap-6">
           {steps.map((s, i) => (
             <div
               key={s.n}
@@ -566,14 +567,14 @@ function Processo() {
 
 function Sobre() {
   return (
-    <section id="sobre" className="mx-auto max-w-7xl px-6 pt-24 pb-8 reveal">
+    <section id="sobre" className="mx-auto max-w-7xl px-6 pt-14 md:pt-24 pb-6 md:pb-8 reveal">
       <div className="grid md:grid-cols-12 gap-10 items-center">
         <div className="md:col-span-5">
           <div className="relative overflow-hidden rounded-[28px] border border-offwhite/10 shadow-[0_30px_80px_-40px_rgba(15,26,38,0.4)]">
             <img
               src={sobrePhoto}
               alt="Thales de Ataíde em seu escritório"
-              className="w-full h-[560px] object-cover object-center"
+              className="w-full h-[380px] md:h-[560px] object-cover object-top"
             />
           </div>
         </div>
@@ -608,30 +609,31 @@ function Sobre() {
               (t) => (
                 <span
                   key={t}
-                  className="rounded-full border border-offwhite/15 bg-white/5 px-3 py-1 text-xs text-offwhite/70 font-sans transition-colors hover:bg-beige hover:text-navy-deep hover:border-beige"
+                  className="rounded-full border border-offwhite/15 bg-white/5 px-3 py-1 text-xs text-offwhite/70 font-sans transition-colors hover:bg-beige hover:text-navy-deep hover:border-beige active:bg-beige active:text-navy-deep active:border-beige"
                 >
                   {t}
                 </span>
               ),
             )}
           </div>
-          <div className="mt-8 flex flex-wrap gap-3">
-            <a href={WHATSAPP} target="_blank" rel="noreferrer">
-              <Button className="btn-shimmer h-12 rounded-full text-offwhite px-6">
+          <div className="mt-8 flex gap-2 sm:gap-3">
+            <a href={WHATSAPP} target="_blank" rel="noreferrer" className="flex-1 sm:flex-none">
+              <Button className="btn-shimmer h-12 w-full rounded-full text-offwhite px-3 sm:px-6 text-xs sm:text-sm">
                 Falar com o Thales
-                <ArrowRight className="ml-2 size-4" />
+                <ArrowRight className="ml-1.5 sm:ml-2 size-4 shrink-0" />
               </Button>
             </a>
             <a
               href="https://instagram.com/adv.thalesataide"
               target="_blank"
               rel="noreferrer"
+              className="flex-1 sm:flex-none"
             >
               <Button
                 variant="outline"
-                className="h-12 rounded-full border-offwhite/20 bg-offwhite text-beige hover:bg-gray-200 hover:text-navy-deep px-6"
+                className="h-12 w-full rounded-full border-offwhite/20 bg-offwhite text-beige hover:bg-gray-200 hover:text-navy-deep px-3 sm:px-6 text-xs sm:text-sm"
               >
-                <Instagram className="size-4" />
+                <Instagram className="size-4 shrink-0" />
                 @adv.thalesataide
               </Button>
             </a>
@@ -663,7 +665,7 @@ function Depoimentos() {
     },
   ];
   return (
-    <section id="depoimentos" className="mx-auto max-w-7xl px-6 pt-8 pb-24 reveal">
+    <section id="depoimentos" className="mx-auto max-w-7xl px-6 pt-6 md:pt-8 pb-14 md:pb-24 reveal">
       <div className="text-center">
         <p className="font-sans text-xs uppercase tracking-[0.35em] text-beige">
           Confiança
@@ -672,7 +674,7 @@ function Depoimentos() {
           O que dizem os clientes
         </h2>
       </div>
-      <div className="mt-14 grid gap-6 md:grid-cols-3">
+      <div className="mt-8 md:mt-14 grid gap-6 md:grid-cols-3">
         {data.map((t, i) => (
           <div
             key={i}
@@ -700,16 +702,16 @@ function Depoimentos() {
 
 function CtaFinal() {
   return (
-    <section className="mx-auto max-w-7xl px-6 pb-24 reveal">
+    <section className="mx-auto max-w-7xl px-6 pb-14 md:pb-24 reveal">
       <div className="relative overflow-hidden rounded-[32px] bg-navy text-offwhite">
         <img
           src={ctaPhoto.url}
           alt=""
           aria-hidden
-          className="absolute inset-0 h-full w-full object-cover object-center opacity-40 mix-blend-luminosity"
+          className="absolute inset-0 h-full w-full object-cover object-center opacity-60 mix-blend-luminosity"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-navy-deep via-navy-deep/85 to-navy/40" />
-        <div className="relative grid md:grid-cols-12 gap-8 p-10 md:p-16 items-center">
+        <div className="absolute inset-0 bg-gradient-to-r from-navy-deep/90 via-navy-deep/70 to-navy/30" />
+        <div className="relative grid md:grid-cols-12 gap-8 p-6 md:p-16 items-center">
           <div className="md:col-span-8">
             <p className="font-sans text-xs uppercase tracking-[0.35em] text-beige">
               Não deixe para depois
@@ -725,7 +727,7 @@ function CtaFinal() {
               aberto. Converse comigo hoje mesmo, sem compromisso.
             </p>
           </div>
-          <div className="md:col-span-4">
+          <div className="mt-8 md:mt-0 md:col-span-4">
             <div className="liquid-glass backdrop-blur-xl backdrop-saturate-150 rounded-2xl p-6">
               <div className="flex items-center gap-3">
                 <div className="grid size-11 place-items-center rounded-xl bg-beige/15 text-beige">
@@ -766,9 +768,9 @@ function Footer() {
               Thales<span className="text-beige">.</span>Ataíde
             </div>
             <p className="mt-2 text-sm text-offwhite/60 font-sans font-light max-w-xs">
-              Advocacia humana em Direito Previdenciário
+              Advocacia humana em Direito
               <br />
-              e de Família.
+              Previdenciário e de Família.
             </p>
             <div className="mt-4 text-xs text-beige/80 uppercase tracking-widest">
               OAB/ES 40.851
@@ -804,7 +806,7 @@ function Footer() {
             </p>
           </div>
         </div>
-        <div className="mt-12 pt-6 border-t border-white/10 flex flex-col md:flex-row justify-between gap-4 text-xs text-offwhite/40 font-sans">
+        <div className="mt-12 pt-6 border-t border-white/10 flex flex-col items-center text-center md:flex-row md:items-center md:text-left md:justify-between gap-4 text-xs text-offwhite/40 font-sans">
           <span>© {new Date().getFullYear()} Thales de Ataíde Evangelista</span>
           <span>
             Desenvolvido por{" "}
