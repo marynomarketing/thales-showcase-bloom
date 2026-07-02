@@ -139,7 +139,7 @@ function Header() {
 
 function Hero() {
   return (
-    <section id="top" className="relative isolate min-h-[140vh] md:min-h-[130vh] overflow-hidden">
+    <section id="top" className="relative isolate min-h-[150vh] md:min-h-[138vh] overflow-hidden">
       {/* Full-bleed background photo, kept fully clear/bright */}
       <img
         src={heroPhoto}
@@ -149,18 +149,15 @@ function Hero() {
       {/* Bottom black gradient, only behind the text block so the photo stays clear up top */}
       <div className="absolute inset-x-0 bottom-0 -z-10 h-[40%] bg-gradient-to-t from-black via-black/70 to-transparent" />
 
-      <div className="relative mx-auto grid min-h-[140vh] md:min-h-[130vh] max-w-7xl grid-cols-1 gap-6 px-6 pt-16 pb-14 lg:grid-cols-12 lg:gap-4">
+      <div className="relative mx-auto grid min-h-[150vh] md:min-h-[138vh] max-w-7xl grid-cols-1 gap-6 px-6 pt-16 pb-16 lg:grid-cols-12 lg:gap-4">
         {/* Left: headline, pinned to the bottom so it never sits over his face */}
         <div className="flex flex-col justify-end lg:col-span-8 reveal">
-          <div className="inline-flex w-fit items-center gap-2 rounded-full liquid-glass backdrop-blur-xl backdrop-saturate-200 px-4 py-1.5 text-[11px] uppercase tracking-[0.3em] text-champagne">
-            Especialista em Direito Previdenciário e de Família
-          </div>
-          <h1 className="mt-4 font-display text-[30px] leading-[1.08] md:text-[46px] font-medium text-offwhite tracking-[-0.02em]">
+          <h1 className="font-display text-[34px] leading-[1.06] md:text-[52px] font-medium text-offwhite tracking-[-0.02em]">
             O primeiro passo
             <br />
             <span className="text-beige">começa agora.</span>
           </h1>
-          <p className="mt-4 max-w-xl text-base md:text-lg text-offwhite/80 font-sans font-light leading-relaxed">
+          <p className="mt-4 max-w-lg text-sm md:text-base text-offwhite/80 font-sans font-light leading-relaxed">
             Você chegou até aqui carregando uma dúvida, uma negativa ou uma
             dor que ninguém soube explicar direito. Eu conduzo o processo e
             caminho ao seu lado até o fim: com a técnica que o caso exige e o
@@ -176,8 +173,12 @@ function Hero() {
           </div>
         </div>
 
-        {/* Right: floating liquid glass contact card, tall and close to the photo */}
+        {/* Right: floating contact card, tall and close to the photo */}
         <div className="flex flex-col justify-end lg:col-span-4 lg:-ml-6 reveal">
+          <div className="mb-3 flex items-center gap-2 text-[11px] uppercase tracking-[0.3em] text-champagne">
+            <span className="h-px w-6 bg-champagne/60" />
+            Especialista em Direito Previdenciário e de Família
+          </div>
           <HeroForm />
         </div>
       </div>
