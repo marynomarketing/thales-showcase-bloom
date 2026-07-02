@@ -806,7 +806,17 @@ function Footer() {
         </div>
         <div className="mt-12 pt-6 border-t border-white/10 flex flex-col md:flex-row justify-between gap-4 text-xs text-offwhite/40 font-sans">
           <span>© {new Date().getFullYear()} Thales de Ataíde Evangelista</span>
-          <span>Desenvolvido por @marynomarketing</span>
+          <span>
+            Desenvolvido por{" "}
+            <a
+              href="https://www.marynomarketing.com.br"
+              target="_blank"
+              rel="noreferrer"
+              className="text-beige hover:underline"
+            >
+              @marynomarketing
+            </a>
+          </span>
         </div>
       </div>
     </footer>
