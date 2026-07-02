@@ -139,7 +139,7 @@ function Header() {
 
 function Hero() {
   return (
-    <section id="top" className="relative isolate min-h-[120vh] md:min-h-[115vh] overflow-hidden">
+    <section id="top" className="relative isolate min-h-[140vh] md:min-h-[130vh] overflow-hidden">
       {/* Full-bleed background photo, kept fully clear/bright */}
       <img
         src={heroPhoto}
@@ -147,9 +147,9 @@ function Hero() {
         className="absolute inset-0 -z-20 h-full w-full object-cover object-[30%_2%]"
       />
       {/* Bottom black gradient, only behind the text block so the photo stays clear up top */}
-      <div className="absolute inset-x-0 bottom-0 -z-10 h-[45%] bg-gradient-to-t from-black via-black/70 to-transparent" />
+      <div className="absolute inset-x-0 bottom-0 -z-10 h-[40%] bg-gradient-to-t from-black via-black/70 to-transparent" />
 
-      <div className="relative mx-auto grid min-h-[120vh] md:min-h-[115vh] max-w-7xl grid-cols-1 gap-6 px-6 pt-24 pb-10 lg:grid-cols-12 lg:gap-4">
+      <div className="relative mx-auto grid min-h-[140vh] md:min-h-[130vh] max-w-7xl grid-cols-1 gap-6 px-6 pt-16 pb-14 lg:grid-cols-12 lg:gap-4">
         {/* Left: headline, pinned to the bottom so it never sits over his face */}
         <div className="flex flex-col justify-end lg:col-span-8 reveal">
           <div className="inline-flex w-fit items-center gap-2 rounded-full liquid-glass backdrop-blur-xl backdrop-saturate-200 px-4 py-1.5 text-[11px] uppercase tracking-[0.3em] text-champagne">
@@ -187,7 +187,7 @@ function Hero() {
         <div className="mx-auto grid max-w-7xl grid-cols-2 gap-4 px-6 py-4 text-[11px] text-offwhite/70 font-sans md:grid-cols-4">
           <TrustBadge icon={ShieldCheck} label="Honorários fixos e transparentes" />
           <TrustBadge icon={Sparkles} label="Resposta em até 24h" />
-          <TrustBadge icon={MessageCircle} label="100% online, sem sair de casa" />
+          <TrustBadge icon={MessageCircle} label="Atendimento presencial e online" />
           <TrustBadge icon={HeartHandshake} label="Atendimento humanizado" />
         </div>
       </div>
@@ -280,7 +280,7 @@ function Metric({ value, label }: { value: string; label: string }) {
   return (
     <div>
       <div className="font-display text-lg font-medium text-beige">{value}</div>
-      <div className="text-[11px] uppercase tracking-widest text-beige/60 mt-0.5">
+      <div className="text-[11px] uppercase tracking-widest text-offwhite/60 mt-0.5">
         {label}
       </div>
     </div>
