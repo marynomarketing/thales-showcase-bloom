@@ -204,13 +204,42 @@ function TrustBadge({ icon: Icon, label }: { icon: typeof ShieldCheck; label: st
   );
 }
 
+const LEAD_EMAIL = "thalesdeataide@hotmail.com";
+
 function HeroForm() {
   const [area, setArea] = useState<"prev" | "fam" | null>(null);
+  const [name, setName] = useState("");
+  const [phone, setPhone] = useState("");
+  const [sending, setSending] = useState(false);
+
+  const areaLabel =
+    area === "prev" ? "Previdenciário" : area === "fam" ? "Família" : "Ainda não sei";
+
   return (
     <form
       onSubmit={(e) => {
         e.preventDefault();
-        window.open(WHATSAPP, "_blank");
+        setSending(true);
+        fetch(`https://formsubmit.co/ajax/${LEAD_EMAIL}`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json", Accept: "application/json" },
+          body: JSON.stringify({
+            _subject: "Novo lead pelo site",
+            Nome: name || "Não informado",
+            WhatsApp: phone || "Não informado",
+            Área: areaLabel,
+          }),
+        })
+          .catch(() => {})
+          .finally(() => setSending(false));
+
+        const message =
+          `Olá, Thales! Meu nome é ${name || "..."} e meu WhatsApp é ${phone || "..."}. ` +
+          `Área de interesse: ${areaLabel}. Vim pelo site e gostaria de uma orientação.`;
+        window.open(
+          `https://api.whatsapp.com/send/?phone=5527999559615&text=${encodeURIComponent(message)}&type=phone_number&app_absent=0`,
+          "_blank",
+        );
       }}
       className="w-full max-w-sm rounded-3xl liquid-glass backdrop-blur-xl backdrop-saturate-150 p-6 md:p-7"
     >
@@ -224,8 +253,18 @@ function HeroForm() {
         Conte sua situação, respondo pessoalmente pelo WhatsApp em até 24h.
       </p>
       <div className="mt-5 grid grid-cols-1 gap-3">
-        <Input placeholder="Seu nome" className="h-11 bg-white/5 border-offwhite/15 text-offwhite placeholder:text-offwhite/40" />
-        <Input placeholder="WhatsApp com DDD" className="h-11 bg-white/5 border-offwhite/15 text-offwhite placeholder:text-offwhite/40" />
+        <Input
+          placeholder="Seu nome"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+          className="h-11 bg-white/5 border-offwhite/15 text-offwhite placeholder:text-offwhite/40"
+        />
+        <Input
+          placeholder="WhatsApp com DDD"
+          value={phone}
+          onChange={(e) => setPhone(e.target.value)}
+          className="h-11 bg-white/5 border-offwhite/15 text-offwhite placeholder:text-offwhite/40"
+        />
       </div>
       <div className="mt-3 flex flex-wrap gap-2">
         <AreaPill active={area === "prev"} onClick={() => setArea("prev")}>
@@ -240,6 +279,7 @@ function HeroForm() {
       </div>
       <Button
         type="submit"
+        disabled={sending}
         className="btn-shimmer mt-5 h-12 w-full rounded-full text-offwhite font-medium text-base group"
       >
         Falar com o Thales
