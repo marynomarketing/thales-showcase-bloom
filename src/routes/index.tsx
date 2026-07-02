@@ -437,7 +437,6 @@ function Acompanhamento() {
       </div>
       <div className="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
         <div className="md:row-span-2 liquid-glass backdrop-blur-xl backdrop-saturate-150 rounded-3xl p-8 text-offwhite relative overflow-hidden">
-          <div className="absolute -right-16 -bottom-16 size-64 rounded-full bg-beige/20 blur-3xl" />
           <div className="relative">
             <div className="text-beige font-display text-6xl font-medium leading-none">
               06
@@ -590,9 +589,9 @@ function Sobre() {
             >
               <Button
                 variant="outline"
-                className="h-12 rounded-full border-offwhite/20 bg-offwhite text-beige hover:bg-offwhite/90 px-6"
+                className="h-12 rounded-full border-offwhite/20 bg-offwhite text-beige hover:bg-gray-200 hover:text-blue-600 px-6"
               >
-                <Instagram className="mr-2 size-4" />
+                <Instagram className="size-4" />
                 @adv.thalesataide
               </Button>
             </a>
