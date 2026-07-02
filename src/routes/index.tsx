@@ -139,18 +139,22 @@ function Header() {
 
 function Hero() {
   return (
-    <section id="top" className="relative isolate min-h-[105vh] lg:min-h-[122vh] overflow-hidden">
-      {/* Full-bleed background photo, kept fully clear/bright */}
-      <img
-        src={heroPhoto}
-        alt="Thales de Ataíde Evangelista, advogado"
-        className="absolute inset-0 -z-20 h-full w-full object-cover object-[33%_12%] lg:object-[30%_2%]"
-      />
-      {/* Bottom black gradient, only behind the text block so the photo stays clear up top */}
-      <div className="absolute inset-x-0 bottom-0 -z-10 h-[62%] lg:h-[40%] bg-gradient-to-t from-black via-black/70 to-transparent" />
+    <section id="top" className="relative isolate lg:min-h-[122vh] overflow-hidden">
+      {/* Mobile: photo is a normal block with a fixed height, so text below it can never overlap his face.
+          Desktop: photo is an absolute full-bleed background behind the text (unchanged). */}
+      <div className="relative h-[72vh] lg:h-full lg:absolute lg:inset-0 lg:-z-20">
+        <img
+          src={heroPhoto}
+          alt="Thales de Ataíde Evangelista, advogado"
+          className="h-full w-full object-cover object-[35%_15%] lg:object-[30%_2%]"
+        />
+        {/* Bottom black gradient, only behind the text block so the photo stays clear up top */}
+        <div className="absolute inset-x-0 bottom-0 h-1/2 lg:h-[40%] bg-gradient-to-t from-black via-black/70 to-transparent" />
+      </div>
 
-      {/* Content: simple top-padded flow on mobile, bottom-pinned grid on desktop */}
-      <div className="relative mx-auto max-w-7xl px-6 pt-[48vh] pb-10 lg:grid lg:grid-cols-12 lg:gap-4 lg:min-h-[122vh] lg:pt-16 lg:pb-16">
+      {/* Content: normal flow right after the photo on mobile (pulled up slightly into the fade),
+          bottom-pinned grid overlaid on the photo on desktop */}
+      <div className="relative mx-auto max-w-7xl px-6 -mt-16 pb-10 lg:mt-0 lg:grid lg:grid-cols-12 lg:gap-4 lg:min-h-[122vh] lg:pt-16 lg:pb-16">
         {/* Headline, always well below where his face sits */}
         <div className="lg:flex lg:flex-col lg:justify-end lg:col-span-7 reveal">
           <p className="text-[10px] uppercase tracking-[0.3em] text-beige/80">
