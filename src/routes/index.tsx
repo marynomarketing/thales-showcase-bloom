@@ -139,7 +139,7 @@ function Header() {
 
 function Hero() {
   return (
-    <section id="top" className="relative isolate min-h-[105vh] lg:min-h-[140vh] overflow-hidden">
+    <section id="top" className="relative isolate min-h-[105vh] lg:min-h-[122vh] overflow-hidden">
       {/* Full-bleed background photo, kept fully clear/bright */}
       <img
         src={heroPhoto}
@@ -150,9 +150,9 @@ function Hero() {
       <div className="absolute inset-x-0 bottom-0 -z-10 h-[62%] lg:h-[40%] bg-gradient-to-t from-black via-black/70 to-transparent" />
 
       {/* Content: simple top-padded flow on mobile, bottom-pinned grid on desktop */}
-      <div className="relative mx-auto max-w-7xl px-6 pt-[48vh] pb-10 lg:grid lg:grid-cols-12 lg:gap-4 lg:min-h-[140vh] lg:pt-16 lg:pb-16">
+      <div className="relative mx-auto max-w-7xl px-6 pt-[48vh] pb-10 lg:grid lg:grid-cols-12 lg:gap-4 lg:min-h-[122vh] lg:pt-16 lg:pb-16">
         {/* Headline, always well below where his face sits */}
-        <div className="lg:flex lg:flex-col lg:justify-end lg:col-span-8 reveal">
+        <div className="lg:flex lg:flex-col lg:justify-end lg:col-span-7 reveal">
           <p className="text-[10px] uppercase tracking-[0.3em] text-beige/80">
             Advogado Especialista
           </p>
@@ -178,7 +178,7 @@ function Hero() {
         </div>
 
         {/* Contact card: flows normally below on mobile, floats centered/pulled-in on desktop */}
-        <div className="mt-8 lg:mt-0 lg:flex lg:flex-col lg:justify-center lg:col-span-3 lg:-ml-24 reveal">
+        <div className="mt-8 lg:mt-0 lg:flex lg:flex-col lg:justify-center lg:col-span-4 lg:-ml-16 reveal">
           <HeroForm />
         </div>
       </div>
@@ -242,32 +242,32 @@ function HeroForm() {
           "_blank",
         );
       }}
-      className="w-full max-w-sm rounded-3xl liquid-glass backdrop-blur-xl backdrop-saturate-150 p-6 md:p-7"
+      className="w-full max-w-sm lg:max-w-md rounded-3xl liquid-glass backdrop-blur-xl backdrop-saturate-150 p-6 md:p-8"
     >
       <p className="font-sans text-[11px] uppercase tracking-[0.35em] text-beige">
         Consulta gratuita
       </p>
-      <p className="mt-2 font-display text-2xl font-medium text-offwhite">
+      <p className="mt-2 font-display text-2xl lg:text-[28px] font-medium text-offwhite">
         Fale com o Thales agora
       </p>
       <p className="mt-1 text-sm text-offwhite/60 font-sans">
         Conte sua situação, respondo pessoalmente pelo WhatsApp em até 24h.
       </p>
-      <div className="mt-5 grid grid-cols-1 gap-3">
+      <div className="mt-6 grid grid-cols-1 gap-3.5">
         <Input
           placeholder="Seu nome"
           value={name}
           onChange={(e) => setName(e.target.value)}
-          className="h-11 bg-white/5 border-offwhite/15 text-offwhite placeholder:text-offwhite/40"
+          className="h-12 bg-white/5 border-offwhite/15 text-offwhite placeholder:text-offwhite/40"
         />
         <Input
           placeholder="WhatsApp com DDD"
           value={phone}
           onChange={(e) => setPhone(e.target.value)}
-          className="h-11 bg-white/5 border-offwhite/15 text-offwhite placeholder:text-offwhite/40"
+          className="h-12 bg-white/5 border-offwhite/15 text-offwhite placeholder:text-offwhite/40"
         />
       </div>
-      <div className="mt-3 flex flex-wrap gap-2">
+      <div className="mt-4 flex flex-wrap gap-2">
         <AreaPill active={area === "prev"} onClick={() => setArea("prev")}>
           Previdenciário
         </AreaPill>
@@ -281,7 +281,7 @@ function HeroForm() {
       <Button
         type="submit"
         disabled={sending}
-        className="btn-shimmer mt-5 h-12 w-full rounded-full text-offwhite font-medium text-base group"
+        className="btn-shimmer mt-6 h-13 w-full rounded-full text-offwhite font-medium text-base group"
       >
         Falar com o Thales
         <ArrowRight className="ml-2 size-4 transition-transform group-hover:translate-x-1" />
