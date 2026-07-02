@@ -212,7 +212,7 @@ function HeroForm() {
         e.preventDefault();
         window.open(WHATSAPP, "_blank");
       }}
-      className="w-full max-w-sm rounded-3xl liquid-glass backdrop-blur-xl backdrop-saturate-200 p-6 md:p-7"
+      className="w-full max-w-sm rounded-3xl liquid-glass backdrop-blur-xl backdrop-saturate-150 p-6 md:p-7"
     >
       <p className="font-sans text-[11px] uppercase tracking-[0.35em] text-beige">
         Consulta gratuita
@@ -371,7 +371,7 @@ function ComparisonCard({
   const isGain = tone === "gain";
   return (
     <div
-      className={`liquid-glass backdrop-blur-xl backdrop-saturate-200 rounded-3xl p-8 md:p-10 transition-all duration-500 hover:-translate-y-1 ${
+      className={`liquid-glass backdrop-blur-xl backdrop-saturate-150 rounded-3xl p-8 md:p-10 transition-all duration-500 hover:-translate-y-1 ${
         isGain ? "shadow-[0_30px_60px_-40px_rgba(15,26,38,0.7)]" : ""
       }`}
     >
@@ -436,7 +436,7 @@ function Acompanhamento() {
         </p>
       </div>
       <div className="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-        <div className="md:row-span-2 liquid-glass backdrop-blur-xl backdrop-saturate-200 rounded-3xl p-8 text-offwhite relative overflow-hidden">
+        <div className="md:row-span-2 liquid-glass backdrop-blur-xl backdrop-saturate-150 rounded-3xl p-8 text-offwhite relative overflow-hidden">
           <div className="absolute -right-16 -bottom-16 size-64 rounded-full bg-beige/20 blur-3xl" />
           <div className="relative">
             <div className="text-beige font-display text-6xl font-medium leading-none">
@@ -456,7 +456,7 @@ function Acompanhamento() {
         {cards.map((c) => (
           <div
             key={c.title}
-            className="group liquid-glass backdrop-blur-xl backdrop-saturate-200 rounded-3xl p-6 transition-all duration-500 hover:-translate-y-1 hover:border-beige/60 hover:shadow-[0_20px_50px_-30px_rgba(168,137,95,0.5)]"
+            className="group liquid-glass backdrop-blur-xl backdrop-saturate-150 rounded-3xl p-6 transition-all duration-500 hover:-translate-y-1 hover:border-beige/60 hover:shadow-[0_20px_50px_-30px_rgba(168,137,95,0.5)]"
           >
             <div className="grid size-11 place-items-center rounded-xl bg-white/5 text-beige transition-colors group-hover:bg-beige group-hover:text-offwhite">
               <c.icon className="size-5" />
@@ -637,7 +637,7 @@ function Depoimentos() {
         {data.map((t, i) => (
           <div
             key={i}
-            className="liquid-glass backdrop-blur-xl backdrop-saturate-200 rounded-3xl p-8 flex flex-col transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_25px_60px_-40px_rgba(15,26,38,0.4)]"
+            className="liquid-glass backdrop-blur-xl backdrop-saturate-150 rounded-3xl p-8 flex flex-col transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_25px_60px_-40px_rgba(15,26,38,0.4)]"
           >
             <div className="flex gap-0.5 text-beige">
               {Array.from({ length: 5 }).map((_, i) => (
@@ -691,7 +691,7 @@ function CtaFinal() {
             </p>
           </div>
           <div className="md:col-span-4">
-            <div className="liquid-glass backdrop-blur-xl backdrop-saturate-200 rounded-2xl p-6">
+            <div className="liquid-glass backdrop-blur-xl backdrop-saturate-150 rounded-2xl p-6">
               <div className="flex items-center gap-3">
                 <div className="grid size-11 place-items-center rounded-xl bg-beige/15 text-beige">
                   <Sparkles className="size-5" />
