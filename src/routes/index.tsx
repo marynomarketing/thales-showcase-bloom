@@ -153,7 +153,7 @@ function Hero() {
         {/* Left: headline, pinned to the bottom so it never sits over his face */}
         <div className="flex flex-col justify-end lg:col-span-8 reveal">
           <p className="text-[10px] uppercase tracking-[0.3em] text-champagne/80">
-            Advogado
+            Advogado Especialista
           </p>
           <h1 className="mt-2 font-display text-[34px] leading-[1.06] md:text-[52px] font-medium text-offwhite tracking-[-0.02em]">
             O primeiro passo
