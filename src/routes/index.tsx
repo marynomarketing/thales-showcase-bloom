@@ -139,45 +139,45 @@ function Header() {
 
 function Hero() {
   return (
-    <section id="top" className="relative isolate min-h-screen overflow-hidden">
+    <section id="top" className="relative isolate min-h-[120vh] md:min-h-[115vh] overflow-hidden">
       {/* Full-bleed background photo, kept fully clear/bright */}
       <img
         src={heroPhoto}
         alt="Thales de Ataíde Evangelista, advogado"
-        className="absolute inset-0 -z-20 h-full w-full object-cover object-[30%_8%]"
+        className="absolute inset-0 -z-20 h-full w-full object-cover object-[30%_2%]"
       />
       {/* Bottom black gradient, only behind the text block so the photo stays clear up top */}
-      <div className="absolute inset-x-0 bottom-0 -z-10 h-[55%] bg-gradient-to-t from-black via-black/70 to-transparent" />
+      <div className="absolute inset-x-0 bottom-0 -z-10 h-[45%] bg-gradient-to-t from-black via-black/70 to-transparent" />
 
-      <div className="relative mx-auto grid min-h-screen max-w-7xl grid-cols-1 gap-6 px-6 pt-24 pb-10 lg:grid-cols-12 lg:gap-6">
+      <div className="relative mx-auto grid min-h-[120vh] md:min-h-[115vh] max-w-7xl grid-cols-1 gap-6 px-6 pt-24 pb-10 lg:grid-cols-12 lg:gap-4">
         {/* Left: headline, pinned to the bottom so it never sits over his face */}
         <div className="flex flex-col justify-end lg:col-span-8 reveal">
-          <div className="inline-flex w-fit items-center gap-2 rounded-full liquid-glass px-4 py-1.5 text-[11px] uppercase tracking-[0.3em] text-champagne">
+          <div className="inline-flex w-fit items-center gap-2 rounded-full liquid-glass backdrop-blur-xl backdrop-saturate-200 px-4 py-1.5 text-[11px] uppercase tracking-[0.3em] text-champagne">
             Especialista em Direito Previdenciário e de Família
           </div>
-          <h1 className="mt-5 font-display text-[38px] leading-[1.05] md:text-[58px] font-medium text-offwhite tracking-[-0.02em]">
+          <h1 className="mt-4 font-display text-[30px] leading-[1.08] md:text-[46px] font-medium text-offwhite tracking-[-0.02em]">
             O primeiro passo
             <br />
             <span className="text-beige">começa agora.</span>
           </h1>
-          <p className="mt-5 max-w-xl text-lg text-offwhite/80 font-sans font-light leading-relaxed">
+          <p className="mt-4 max-w-xl text-base md:text-lg text-offwhite/80 font-sans font-light leading-relaxed">
             Você chegou até aqui carregando uma dúvida, uma negativa ou uma
             dor que ninguém soube explicar direito. Eu conduzo o processo e
             caminho ao seu lado até o fim: com a técnica que o caso exige e o
             cuidado que você merece.
           </p>
 
-          <div className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-3">
+          <div className="mt-6 flex flex-wrap items-center gap-x-6 gap-y-3">
             <Metric value="OAB/ES" label="40.851" />
-            <span className="h-8 w-px bg-offwhite/20" />
+            <span className="h-8 w-px bg-beige/20" />
             <Metric value="Grande Vitória" label="Presencial · ES" />
-            <span className="h-8 w-px bg-offwhite/20" />
+            <span className="h-8 w-px bg-beige/20" />
             <Metric value="Todo Brasil" label="Atendimento online" />
           </div>
         </div>
 
         {/* Right: floating liquid glass contact card, tall and close to the photo */}
-        <div className="flex flex-col justify-end lg:col-span-4 reveal">
+        <div className="flex flex-col justify-end lg:col-span-4 lg:-ml-6 reveal">
           <HeroForm />
         </div>
       </div>
@@ -212,7 +212,7 @@ function HeroForm() {
         e.preventDefault();
         window.open(WHATSAPP, "_blank");
       }}
-      className="w-full max-w-sm rounded-3xl liquid-glass p-6 md:p-7"
+      className="w-full max-w-sm rounded-3xl liquid-glass backdrop-blur-xl backdrop-saturate-200 p-6 md:p-7"
     >
       <p className="font-sans text-[11px] uppercase tracking-[0.35em] text-champagne">
         Consulta gratuita
@@ -279,8 +279,8 @@ function AreaPill({
 function Metric({ value, label }: { value: string; label: string }) {
   return (
     <div>
-      <div className="font-display text-lg font-medium text-offwhite">{value}</div>
-      <div className="text-[11px] uppercase tracking-widest text-offwhite/50 mt-0.5">
+      <div className="font-display text-lg font-medium text-beige">{value}</div>
+      <div className="text-[11px] uppercase tracking-widest text-beige/60 mt-0.5">
         {label}
       </div>
     </div>
@@ -370,7 +370,7 @@ function ComparisonCard({
   const isGain = tone === "gain";
   return (
     <div
-      className={`liquid-glass rounded-3xl p-8 md:p-10 transition-all duration-500 hover:-translate-y-1 ${
+      className={`liquid-glass backdrop-blur-xl backdrop-saturate-200 rounded-3xl p-8 md:p-10 transition-all duration-500 hover:-translate-y-1 ${
         isGain ? "shadow-[0_30px_60px_-40px_rgba(15,26,38,0.7)]" : ""
       }`}
     >
@@ -438,7 +438,7 @@ function Acompanhamento() {
         </p>
       </div>
       <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-4">
-        <div className="md:row-span-2 liquid-glass rounded-3xl p-8 text-offwhite relative overflow-hidden">
+        <div className="md:row-span-2 liquid-glass backdrop-blur-xl backdrop-saturate-200 rounded-3xl p-8 text-offwhite relative overflow-hidden">
           <div className="absolute -right-16 -bottom-16 size-64 rounded-full bg-beige/20 blur-3xl" />
           <div className="relative">
             <div className="text-champagne font-display text-6xl font-medium leading-none">
@@ -458,7 +458,7 @@ function Acompanhamento() {
         {cards.map((c) => (
           <div
             key={c.title}
-            className="group liquid-glass rounded-3xl p-6 transition-all duration-500 hover:-translate-y-1 hover:border-beige/60 hover:shadow-[0_20px_50px_-30px_rgba(168,137,95,0.5)]"
+            className="group liquid-glass backdrop-blur-xl backdrop-saturate-200 rounded-3xl p-6 transition-all duration-500 hover:-translate-y-1 hover:border-beige/60 hover:shadow-[0_20px_50px_-30px_rgba(168,137,95,0.5)]"
           >
             <div className="grid size-11 place-items-center rounded-xl bg-white/5 text-beige transition-colors group-hover:bg-beige group-hover:text-offwhite">
               <c.icon className="size-5" />
@@ -647,7 +647,7 @@ function Depoimentos() {
         {data.map((t, i) => (
           <div
             key={i}
-            className="liquid-glass rounded-3xl p-8 flex flex-col transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_25px_60px_-40px_rgba(15,26,38,0.4)]"
+            className="liquid-glass backdrop-blur-xl backdrop-saturate-200 rounded-3xl p-8 flex flex-col transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_25px_60px_-40px_rgba(15,26,38,0.4)]"
           >
             <div className="flex gap-0.5 text-beige">
               {Array.from({ length: 5 }).map((_, i) => (
@@ -701,7 +701,7 @@ function CtaFinal() {
             </p>
           </div>
           <div className="md:col-span-4">
-            <div className="liquid-glass rounded-2xl p-6">
+            <div className="liquid-glass backdrop-blur-xl backdrop-saturate-200 rounded-2xl p-6">
               <div className="flex items-center gap-3">
                 <div className="grid size-11 place-items-center rounded-xl bg-beige/15 text-beige">
                   <Sparkles className="size-5" />
