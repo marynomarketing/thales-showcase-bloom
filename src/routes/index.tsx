@@ -43,7 +43,7 @@ export const Route = createFileRoute("/")({
 function Index() {
   useReveal();
   return (
-    <div className="min-h-screen bg-navy-deep text-offwhite overflow-x-hidden">
+    <div className="min-h-screen bg-navy text-offwhite overflow-x-hidden">
       <TopBar />
       <Header />
       <Hero />
@@ -589,7 +589,7 @@ function Sobre() {
             >
               <Button
                 variant="outline"
-                className="h-12 rounded-full border-offwhite/20 bg-offwhite text-beige hover:bg-gray-200 hover:text-blue-600 px-6"
+                className="h-12 rounded-full border-offwhite/20 bg-offwhite text-beige hover:bg-gray-200 hover:text-navy-deep px-6"
               >
                 <Instagram className="size-4" />
                 @adv.thalesataide
