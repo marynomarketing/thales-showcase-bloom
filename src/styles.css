@@ -145,7 +145,7 @@
   --radius: 0.625rem;
   --navy: #1B2B3D;
   --navy-deep: #0F1A26;
-  --beige: #A8895F;
+  --beige: #B89B72;
   --champagne: #E7D6AC;
   --offwhite: #F8F3EA;
   --ink: #15120E;
@@ -302,4 +302,20 @@
   &:hover::after {
     transform: translateX(130%);
   }
+}
+
+@utility btn-shimmer {
+  position: relative;
+  background-image: linear-gradient(100deg, var(--beige) 0%, var(--beige) 38%, var(--champagne) 50%, var(--beige) 62%, var(--beige) 100%);
+  background-size: 240% 100%;
+  animation: btn-shimmer-pass 3s ease-in-out infinite;
+  transition: filter 0.3s ease;
+  &:hover {
+    filter: brightness(1.08);
+  }
+}
+
+@keyframes btn-shimmer-pass {
+  0% { background-position: 170% 0; }
+  100% { background-position: -70% 0; }
 }

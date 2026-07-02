@@ -125,7 +125,7 @@ function Header() {
         <a href={WHATSAPP} target="_blank" rel="noreferrer">
           <Button
             size="sm"
-            className="btn-glow rounded-full bg-beige text-offwhite hover:bg-champagne hover:text-navy-deep font-medium px-5"
+            className="btn-shimmer rounded-full text-offwhite font-medium px-5"
           >
             <MessageCircle className="mr-2 size-4" /> Fale comigo
           </Button>
@@ -240,7 +240,7 @@ function HeroForm() {
       </div>
       <Button
         type="submit"
-        className="btn-glow mt-5 h-12 w-full rounded-full bg-beige text-offwhite hover:bg-beige/90 font-medium text-base group"
+        className="btn-shimmer mt-5 h-12 w-full rounded-full text-offwhite font-medium text-base group"
       >
         Falar com o Thales
         <ArrowRight className="ml-2 size-4 transition-transform group-hover:translate-x-1" />
@@ -794,7 +794,7 @@ function FloatingWhatsapp() {
       href={WHATSAPP}
       target="_blank"
       rel="noreferrer"
-      className="btn-glow fixed bottom-6 right-6 z-50 grid size-14 place-items-center rounded-full bg-beige text-offwhite shadow-[0_15px_35px_-10px_rgba(168,137,95,0.7)] transition-all duration-300 hover:scale-110 hover:bg-champagne hover:text-navy-deep"
+      className="btn-shimmer fixed bottom-6 right-6 z-50 grid size-14 place-items-center rounded-full text-offwhite shadow-[0_15px_35px_-10px_rgba(168,137,95,0.7)] transition-all duration-300 hover:scale-110"
       aria-label="Fale no WhatsApp"
     >
       <MessageCircle className="size-6" />
