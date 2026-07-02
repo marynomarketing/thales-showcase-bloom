@@ -20,7 +20,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { useReveal } from "@/hooks/use-reveal";
 import heroPhoto from "../assets/thales-hero-photo.png";
-import sobrePhoto from "../assets/thales-sobre.png.asset.json";
+import sobrePhoto from "../assets/thales-sobre-photo.png";
 import ctaPhoto from "../assets/thales-cta.png.asset.json";
 
 const WHATSAPP =
@@ -496,17 +496,17 @@ function Processo() {
         <h2 className="mt-3 font-display text-4xl md:text-5xl font-medium text-offwhite max-w-2xl leading-[1.05]">
           Processo simples.
           <br />
-          Do primeiro <span className="text-champagne">contato</span> ao
+          Do primeiro <span className="text-beige">contato</span> ao
           resultado.
         </h2>
         <div className="mt-14 grid grid-cols-1 md:grid-cols-4 gap-6">
           {steps.map((s, i) => (
             <div
               key={s.n}
-              className="relative border-l border-champagne/25 pl-6 pt-2 transition-all hover:border-champagne"
+              className="relative border-l border-beige/25 pl-6 pt-2 transition-all hover:border-beige"
               style={{ transitionDelay: `${i * 60}ms` }}
             >
-              <div className="font-display text-champagne text-4xl font-medium">
+              <div className="font-display text-beige text-4xl font-medium">
                 {s.n}
               </div>
               <h3 className="mt-3 font-display text-xl font-medium text-offwhite">
@@ -532,18 +532,10 @@ function Sobre() {
         <div className="md:col-span-5">
           <div className="relative overflow-hidden rounded-[28px] border border-offwhite/10 shadow-[0_30px_80px_-40px_rgba(15,26,38,0.4)]">
             <img
-              src={sobrePhoto.url}
+              src={sobrePhoto}
               alt="Thales de Ataíde em seu escritório"
               className="w-full h-[560px] object-cover object-center"
             />
-            <div className="absolute left-4 bottom-4 rounded-2xl bg-navy/85 backdrop-blur px-4 py-3 text-offwhite">
-              <div className="font-display text-sm font-medium">
-                Thales de Ataíde
-              </div>
-              <div className="text-[10px] uppercase tracking-widest text-champagne/80">
-                OAB/ES 40.851
-              </div>
-            </div>
           </div>
         </div>
         <div className="md:col-span-7">
@@ -558,11 +550,11 @@ function Sobre() {
           <div className="mt-6 space-y-4 text-offwhite/70 font-sans font-light text-lg leading-relaxed max-w-xl">
             <p>
               Thales de Ataíde Evangelista atua no{" "}
-              <span className="font-medium text-champagne">
+              <span className="font-medium text-beige">
                 Direito Previdenciário
               </span>{" "}
               e no{" "}
-              <span className="font-medium text-champagne">Direito de Família</span>,
+              <span className="font-medium text-beige">Direito de Família</span>,
               duas frentes escolhidas pelo peso humano que carregam.
             </p>
             <p>
@@ -577,7 +569,7 @@ function Sobre() {
               (t) => (
                 <span
                   key={t}
-                  className="rounded-full border border-offwhite/15 bg-white/5 px-3 py-1 text-xs text-offwhite/70 font-sans"
+                  className="rounded-full border border-offwhite/15 bg-white/5 px-3 py-1 text-xs text-offwhite/70 font-sans transition-colors hover:bg-beige hover:text-navy-deep hover:border-beige"
                 >
                   {t}
                 </span>
@@ -586,7 +578,7 @@ function Sobre() {
           </div>
           <div className="mt-8 flex flex-wrap gap-3">
             <a href={WHATSAPP} target="_blank" rel="noreferrer">
-              <Button className="btn-glow h-12 rounded-full bg-navy hover:bg-navy-deep text-offwhite px-6">
+              <Button className="btn-shimmer h-12 rounded-full text-offwhite px-6">
                 Falar com o Thales
                 <ArrowRight className="ml-2 size-4" />
               </Button>
@@ -598,7 +590,7 @@ function Sobre() {
             >
               <Button
                 variant="outline"
-                className="h-12 rounded-full border-offwhite/20 text-offwhite hover:bg-offwhite hover:text-navy-deep px-6"
+                className="h-12 rounded-full border-offwhite/20 bg-offwhite text-beige hover:bg-offwhite/90 px-6"
               >
                 <Instagram className="mr-2 size-4" />
                 @adv.thalesataide
