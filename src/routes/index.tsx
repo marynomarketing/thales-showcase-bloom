@@ -19,7 +19,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { useReveal } from "@/hooks/use-reveal";
-import heroPhoto from "../assets/thales-alt.png.asset.json";
+import heroPhoto from "../assets/thales-hero-photo.png";
 import sobrePhoto from "../assets/thales-sobre.png.asset.json";
 import ctaPhoto from "../assets/thales-cta.png.asset.json";
 
@@ -33,8 +33,8 @@ const WHATSAPP =
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { property: "og:image", content: heroPhoto.url },
-      { name: "twitter:image", content: heroPhoto.url },
+      { property: "og:image", content: heroPhoto },
+      { name: "twitter:image", content: heroPhoto },
     ],
   }),
   component: Index,
@@ -80,7 +80,7 @@ function Header() {
     >
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
         <a href="#top" className="flex items-center gap-3">
-          <span className="font-display text-xl font-normal text-offwhite tracking-tight">
+          <span className="font-display text-xl font-medium text-offwhite tracking-tight">
             Thales<span className="text-beige">.</span>Ataíde
           </span>
           <span className="hidden sm:inline text-[10px] uppercase tracking-[0.25em] text-offwhite/60">
@@ -123,7 +123,7 @@ function Hero() {
     <section id="top" className="relative isolate min-h-screen overflow-hidden">
       {/* Full-bleed background photo */}
       <img
-        src={heroPhoto.url}
+        src={heroPhoto}
         alt="Thales de Ataíde Evangelista, advogado"
         className="absolute inset-0 -z-20 h-full w-full object-cover object-[70%_center]"
       />
@@ -140,7 +140,7 @@ function Hero() {
           <div className="inline-flex w-fit items-center gap-2 rounded-full liquid-glass px-4 py-1.5 text-[11px] uppercase tracking-[0.3em] text-champagne">
             Especialista em Direito Previdenciário e de Família
           </div>
-          <h1 className="mt-5 font-display text-[38px] leading-[1.05] md:text-[58px] font-normal text-offwhite tracking-[-0.02em]">
+          <h1 className="mt-5 font-display text-[38px] leading-[1.05] md:text-[58px] font-medium text-offwhite tracking-[-0.02em]">
             O primeiro passo <span className="text-beige">começa agora.</span>
           </h1>
           <p className="mt-5 max-w-xl text-lg text-offwhite/80 font-sans font-light leading-relaxed">
@@ -181,7 +181,7 @@ function HeroForm() {
       <p className="font-sans text-[11px] uppercase tracking-[0.35em] text-champagne">
         Consulta gratuita
       </p>
-      <p className="mt-2 font-display text-2xl font-normal text-offwhite">
+      <p className="mt-2 font-display text-2xl font-medium text-offwhite">
         Fale com o Thales agora
       </p>
       <p className="mt-1 text-sm text-offwhite/60 font-sans">
@@ -243,7 +243,7 @@ function AreaPill({
 function Metric({ value, label }: { value: string; label: string }) {
   return (
     <div>
-      <div className="font-display text-lg font-normal text-offwhite">{value}</div>
+      <div className="font-display text-lg font-medium text-offwhite">{value}</div>
       <div className="text-[11px] uppercase tracking-widest text-offwhite/50 mt-0.5">
         {label}
       </div>
@@ -286,7 +286,7 @@ function Comparison() {
         <p className="font-sans text-xs uppercase tracking-[0.35em] text-beige">
           Sua causa merece
         </p>
-        <h2 className="mt-3 font-display text-4xl md:text-5xl font-normal text-offwhite">
+        <h2 className="mt-3 font-display text-4xl md:text-5xl font-medium text-offwhite">
           Atenção real, do início ao fim
         </h2>
         <p className="mt-4 text-offwhite/60 font-sans font-light">
@@ -346,7 +346,7 @@ function ComparisonCard({
         {isGain ? "Recomendado" : "Cenário comum"}
       </div>
       <h3
-        className={`mt-4 font-display text-2xl md:text-3xl font-normal ${
+        className={`mt-4 font-display text-2xl md:text-3xl font-medium ${
           isGain ? "text-champagne" : "text-offwhite"
         }`}
       >
@@ -382,7 +382,7 @@ function Honorarios() {
           <p className="font-sans text-xs uppercase tracking-[0.35em] text-beige">
             Transparência
           </p>
-          <h2 className="mt-3 font-display text-3xl md:text-4xl font-normal text-offwhite leading-tight">
+          <h2 className="mt-3 font-display text-3xl md:text-4xl font-medium text-offwhite leading-tight">
             Honorários claros.
             <br />
             <span className="text-beige">Sem surpresas.</span>
@@ -400,7 +400,7 @@ function Honorarios() {
                 <Sparkles className="size-5" />
               </div>
               <div>
-                <div className="font-display text-lg font-normal text-offwhite">
+                <div className="font-display text-lg font-medium text-offwhite">
                   Consulta inicial guiada
                 </div>
                 <div className="text-xs text-offwhite/55">
@@ -439,7 +439,7 @@ function Acompanhamento() {
           <p className="font-sans text-xs uppercase tracking-[0.35em] text-beige">
             Do início ao fim
           </p>
-          <h2 className="mt-3 font-display text-4xl md:text-5xl font-normal text-offwhite leading-[1.05]">
+          <h2 className="mt-3 font-display text-4xl md:text-5xl font-medium text-offwhite leading-[1.05]">
             Acompanhamento
             <br />
             que você <span className="text-beige">sente</span>.
@@ -454,13 +454,13 @@ function Acompanhamento() {
         <div className="md:row-span-2 liquid-glass rounded-3xl p-8 text-offwhite relative overflow-hidden">
           <div className="absolute -right-16 -bottom-16 size-64 rounded-full bg-beige/20 blur-3xl" />
           <div className="relative">
-            <div className="text-champagne font-display text-6xl font-normal leading-none">
+            <div className="text-champagne font-display text-6xl font-medium leading-none">
               06
             </div>
             <p className="mt-4 text-champagne/70 uppercase tracking-widest text-xs">
               Etapas do cuidado
             </p>
-            <h3 className="mt-6 font-display text-3xl font-normal text-offwhite leading-tight">
+            <h3 className="mt-6 font-display text-3xl font-medium text-offwhite leading-tight">
               Um método construído com empatia e técnica.
             </h3>
             <p className="mt-4 text-offwhite/70 text-sm font-light">
@@ -476,7 +476,7 @@ function Acompanhamento() {
             <div className="grid size-11 place-items-center rounded-xl bg-white/5 text-beige transition-colors group-hover:bg-beige group-hover:text-offwhite">
               <c.icon className="size-5" />
             </div>
-            <h3 className="mt-4 font-display text-xl font-normal text-offwhite">
+            <h3 className="mt-4 font-display text-xl font-medium text-offwhite">
               {c.title}
             </h3>
             <p className="mt-1.5 text-sm text-offwhite/60 font-sans leading-relaxed">
@@ -508,7 +508,7 @@ function Processo() {
         <p className="font-sans text-xs uppercase tracking-[0.35em] text-beige">
           Método
         </p>
-        <h2 className="mt-3 font-display text-4xl md:text-5xl font-normal text-offwhite max-w-2xl leading-[1.05]">
+        <h2 className="mt-3 font-display text-4xl md:text-5xl font-medium text-offwhite max-w-2xl leading-[1.05]">
           Processo simples.
           <br />
           Do primeiro <span className="text-champagne">contato</span> ao
@@ -521,10 +521,10 @@ function Processo() {
               className="relative border-l border-champagne/25 pl-6 pt-2 transition-all hover:border-champagne"
               style={{ transitionDelay: `${i * 60}ms` }}
             >
-              <div className="font-display text-champagne text-4xl font-normal">
+              <div className="font-display text-champagne text-4xl font-medium">
                 {s.n}
               </div>
-              <h3 className="mt-3 font-display text-xl font-normal text-offwhite">
+              <h3 className="mt-3 font-display text-xl font-medium text-offwhite">
                 {s.title}
               </h3>
               <p className="mt-2 text-sm text-offwhite/60 font-sans leading-relaxed">
@@ -552,7 +552,7 @@ function Sobre() {
               className="w-full h-[560px] object-cover object-center"
             />
             <div className="absolute left-4 bottom-4 rounded-2xl bg-navy/85 backdrop-blur px-4 py-3 text-offwhite">
-              <div className="font-display text-sm font-normal">
+              <div className="font-display text-sm font-medium">
                 Thales de Ataíde
               </div>
               <div className="text-[10px] uppercase tracking-widest text-champagne/80">
@@ -565,7 +565,7 @@ function Sobre() {
           <p className="font-sans text-xs uppercase tracking-[0.35em] text-beige">
             Quem é
           </p>
-          <h2 className="mt-3 font-display text-4xl md:text-5xl font-normal text-offwhite leading-[1.05]">
+          <h2 className="mt-3 font-display text-4xl md:text-5xl font-medium text-offwhite leading-[1.05]">
             O advogado por trás
             <br />
             do <span className="text-beige">propósito</span>.
@@ -652,7 +652,7 @@ function Depoimentos() {
         <p className="font-sans text-xs uppercase tracking-[0.35em] text-beige">
           Confiança
         </p>
-        <h2 className="mt-3 font-display text-4xl md:text-5xl font-normal text-offwhite">
+        <h2 className="mt-3 font-display text-4xl md:text-5xl font-medium text-offwhite">
           O que dizem os clientes
         </h2>
       </div>
@@ -670,7 +670,7 @@ function Depoimentos() {
             <p className="mt-5 font-sans font-light text-offwhite/80 leading-relaxed flex-1">
               “{t.quote}”
             </p>
-            <div className="mt-6 pt-5 border-t border-offwhite/10 text-sm font-display font-normal text-offwhite">
+            <div className="mt-6 pt-5 border-t border-offwhite/10 text-sm font-display font-medium text-offwhite">
               {t.name}
             </div>
           </div>
@@ -702,7 +702,7 @@ function CtaFinal() {
             <p className="font-sans text-xs uppercase tracking-[0.35em] text-champagne">
               Antes que seja tarde
             </p>
-            <h2 className="mt-4 font-display text-4xl md:text-5xl font-normal text-offwhite leading-[1.05]">
+            <h2 className="mt-4 font-display text-4xl md:text-5xl font-medium text-offwhite leading-[1.05]">
               Cada dia sem orientação
               <br />
               é um direito que{" "}
@@ -735,7 +735,7 @@ function Footer() {
       <div className="mx-auto max-w-7xl px-6">
         <div className="grid md:grid-cols-3 gap-10">
           <div>
-            <div className="font-display text-2xl font-normal text-offwhite">
+            <div className="font-display text-2xl font-medium text-offwhite">
               Thales<span className="text-beige">.</span>Ataíde
             </div>
             <p className="mt-2 text-sm text-offwhite/60 font-sans font-light max-w-xs">
