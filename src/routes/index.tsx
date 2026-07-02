@@ -327,6 +327,7 @@ function Comparison() {
         </h2>
         <p className="mt-4 text-offwhite/60 font-sans font-light">
           A diferença entre se sentir mais um número e ser tratado como pessoa
+          <br />
           começa no primeiro atendimento.
         </p>
       </div>
