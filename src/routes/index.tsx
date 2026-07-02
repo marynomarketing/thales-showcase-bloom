@@ -221,7 +221,7 @@ function HeroForm() {
         Fale com o Thales agora
       </p>
       <p className="mt-1 text-sm text-offwhite/60 font-sans">
-        Conte sua situação — respondo pessoalmente pelo WhatsApp em até 24h.
+        Conte sua situação, respondo pessoalmente pelo WhatsApp em até 24h.
       </p>
       <div className="mt-5 grid grid-cols-1 gap-3">
         <Input placeholder="Seu nome" className="h-11 bg-white/5 border-offwhite/15 text-offwhite placeholder:text-offwhite/40" />
@@ -417,7 +417,7 @@ function Acompanhamento() {
     { icon: FileText, title: "Análise", desc: "Documentos, provas e prazos avaliados com técnica e olhar humano." },
     { icon: Scale, title: "Estratégia", desc: "Caminho recomendado, alternativas e o que esperar em cada cenário." },
     { icon: ShieldCheck, title: "Protocolo", desc: "Ação ajuizada ou requerimento protocolado com padrão de excelência." },
-    { icon: Eye, title: "Vigilância", desc: "Acompanhamento ativo dos autos — nada passa despercebido." },
+    { icon: Eye, title: "Vigilância", desc: "Acompanhamento ativo dos autos, nada passa despercebido." },
     { icon: Sparkles, title: "Blindagem", desc: "Orientação preventiva para que o problema não volte a acontecer." },
   ];
   return (
@@ -439,17 +439,17 @@ function Acompanhamento() {
         <div className="md:row-span-2 liquid-glass backdrop-blur-xl backdrop-saturate-200 rounded-3xl p-8 text-offwhite relative overflow-hidden">
           <div className="absolute -right-16 -bottom-16 size-64 rounded-full bg-beige/20 blur-3xl" />
           <div className="relative">
-            <div className="text-champagne font-display text-6xl font-medium leading-none">
+            <div className="text-beige font-display text-6xl font-medium leading-none">
               06
             </div>
-            <p className="mt-4 text-champagne/70 uppercase tracking-widest text-xs">
+            <p className="mt-4 text-beige/70 uppercase tracking-widest text-xs">
               Etapas do cuidado
             </p>
             <h3 className="mt-6 font-display text-3xl font-medium text-offwhite leading-tight">
               Um método construído com empatia e técnica.
             </h3>
             <p className="mt-4 text-offwhite/70 text-sm font-light">
-              Menos ansiedade, mais clareza — a partir da primeira conversa.
+              Menos ansiedade, mais clareza a partir da primeira conversa.
             </p>
           </div>
         </div>
@@ -481,7 +481,7 @@ function Processo() {
     { n: "01", title: "Conversa", desc: "Você fala, eu escuto. Sem pressa, sem cobrança." },
     { n: "02", title: "Análise", desc: "Documentos e provas em revisão técnica." },
     { n: "03", title: "Estratégia", desc: "Plano com cenários, prazos e expectativas realistas." },
-    { n: "04", title: "Acompanhamento", desc: "Presença ativa até o desfecho — e depois dele." },
+    { n: "04", title: "Acompanhamento", desc: "Presença ativa até o desfecho e depois dele." },
   ];
   return (
     <section id="processo" className="bg-navy text-offwhite py-24 relative overflow-hidden reveal">
@@ -562,8 +562,8 @@ function Sobre() {
                 Direito Previdenciário
               </span>{" "}
               e no{" "}
-              <span className="font-medium text-champagne">Direito de Família</span>{" "}
-              — duas frentes escolhidas pelo peso humano que carregam.
+              <span className="font-medium text-champagne">Direito de Família</span>,
+              duas frentes escolhidas pelo peso humano que carregam.
             </p>
             <p>
               Foi, ao lado de uma prima, o primeiro advogado da família.
@@ -617,7 +617,7 @@ function Depoimentos() {
   const data = [
     {
       quote:
-        "Eu chegou perdida, sem entender por que meu benefício foi negado. Ele explicou cada passo — pela primeira vez me senti ouvida.",
+        "Eu chegou perdida, sem entender por que meu benefício foi negado. Ele explicou cada passo, pela primeira vez me senti ouvida.",
       name: "Cliente · Previdenciário",
     },
     {
@@ -695,7 +695,7 @@ function CtaFinal() {
             </h2>
             <p className="mt-5 max-w-lg text-offwhite/70 font-sans font-light">
               Um benefício negado, um prazo curto, uma decisão familiar em
-              aberto. Converse comigo hoje mesmo — sem compromisso.
+              aberto. Converse comigo hoje mesmo, sem compromisso.
             </p>
           </div>
           <div className="md:col-span-4">
