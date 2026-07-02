@@ -71,7 +71,7 @@ function TopBar() {
         href={WHATSAPP}
         target="_blank"
         rel="noreferrer"
-        className="inline-flex items-center gap-1.5 text-champagne hover:text-beige transition-colors"
+        className="inline-flex items-center gap-1.5 text-beige hover:text-beige/80 transition-colors"
       >
         <Phone className="size-3.5" /> (27) 99955-9615
       </a>
@@ -116,7 +116,7 @@ function Header() {
             <a
               key={href}
               href={href}
-              className="story-link font-medium transition-colors hover:text-champagne"
+              className="story-link font-medium transition-colors hover:text-beige"
             >
               {label}
             </a>
@@ -152,7 +152,7 @@ function Hero() {
       <div className="relative mx-auto grid min-h-[150vh] md:min-h-[138vh] max-w-7xl grid-cols-1 gap-6 px-6 pt-16 pb-16 lg:grid-cols-12 lg:gap-4">
         {/* Left: headline, pinned to the bottom so it never sits over his face */}
         <div className="flex flex-col justify-end lg:col-span-8 reveal">
-          <p className="text-[10px] uppercase tracking-[0.3em] text-champagne/80">
+          <p className="text-[10px] uppercase tracking-[0.3em] text-beige/80">
             Advogado Especialista
           </p>
           <h1 className="mt-2 font-display text-[34px] leading-[1.06] md:text-[52px] font-medium text-offwhite tracking-[-0.02em]">
@@ -198,7 +198,7 @@ function Hero() {
 function TrustBadge({ icon: Icon, label }: { icon: typeof ShieldCheck; label: string }) {
   return (
     <div className="flex items-center gap-2">
-      <Icon className="size-4 shrink-0 text-champagne" />
+      <Icon className="size-4 shrink-0 text-beige" />
       <span>{label}</span>
     </div>
   );
@@ -214,7 +214,7 @@ function HeroForm() {
       }}
       className="w-full max-w-sm rounded-3xl liquid-glass backdrop-blur-xl backdrop-saturate-200 p-6 md:p-7"
     >
-      <p className="font-sans text-[11px] uppercase tracking-[0.35em] text-champagne">
+      <p className="font-sans text-[11px] uppercase tracking-[0.35em] text-beige">
         Consulta gratuita
       </p>
       <p className="mt-2 font-display text-2xl font-medium text-offwhite">
@@ -303,7 +303,7 @@ function Marquee() {
     <div id="areas" className="relative border-y border-navy/10 bg-navy text-offwhite py-5 overflow-hidden">
       <div className="flex marquee w-max whitespace-nowrap">
         {row.map((t, i) => (
-          <span key={i} className="mx-8 flex items-center gap-8 font-display text-lg text-champagne/90">
+          <span key={i} className="mx-8 flex items-center gap-8 font-display text-lg text-beige/90">
             {t}
             <span className="size-1.5 rounded-full bg-beige/60" />
           </span>
@@ -377,14 +377,14 @@ function ComparisonCard({
     >
       <div
         className={`inline-flex items-center gap-2 rounded-full px-3 py-1 text-[11px] uppercase tracking-widest ${
-          isGain ? "bg-beige/20 text-champagne" : "bg-white/5 text-offwhite/60"
+          isGain ? "bg-beige/20 text-beige" : "bg-white/5 text-offwhite/60"
         }`}
       >
         {isGain ? "Recomendado" : "Cenário comum"}
       </div>
       <h3
         className={`mt-4 font-display text-2xl md:text-3xl font-medium ${
-          isGain ? "text-champagne" : "text-offwhite"
+          isGain ? "text-beige" : "text-offwhite"
         }`}
       >
         {title}
@@ -619,7 +619,7 @@ function Depoimentos() {
     },
     {
       quote:
-        "Não é só técnica: é presença. Sempre respondeu, sempre explicou. Recomendo de olhos fechados a quem procura um advogado de confiança.",
+        "Thales sempre respondeu e me explicou tudo. Recomendo de olhos fechados a quem procura um advogado de confiança.",
       name: "Cliente · Previdenciário",
     },
   ];
@@ -676,14 +676,14 @@ function CtaFinal() {
         <div className="absolute inset-0 bg-gradient-to-r from-navy-deep via-navy-deep/85 to-navy/40" />
         <div className="relative grid md:grid-cols-12 gap-8 p-10 md:p-16 items-center">
           <div className="md:col-span-8">
-            <p className="font-sans text-xs uppercase tracking-[0.35em] text-champagne">
+            <p className="font-sans text-xs uppercase tracking-[0.35em] text-beige">
               Antes que seja tarde
             </p>
             <h2 className="mt-4 font-display text-4xl md:text-5xl font-medium text-offwhite leading-[1.05]">
               Cada dia sem orientação
               <br />
               é um direito que{" "}
-              <span className="text-champagne">pode se perder</span>.
+              <span className="text-beige">pode se perder</span>.
             </h2>
             <p className="mt-5 max-w-lg text-offwhite/70 font-sans font-light">
               Um benefício negado, um prazo curto, uma decisão familiar em
@@ -731,24 +731,26 @@ function Footer() {
               Thales<span className="text-beige">.</span>Ataíde
             </div>
             <p className="mt-2 text-sm text-offwhite/60 font-sans font-light max-w-xs">
-              Advocacia humana em Direito Previdenciário e de Família.
+              Advocacia humana em Direito Previdenciário
+              <br />
+              e de Família.
             </p>
-            <div className="mt-4 text-xs text-champagne/80 uppercase tracking-widest">
+            <div className="mt-4 text-xs text-beige/80 uppercase tracking-widest">
               OAB/ES 40.851
             </div>
           </div>
           <div className="text-sm font-sans space-y-2">
-            <div className="font-display text-champagne text-xs uppercase tracking-widest mb-3">
+            <div className="font-display text-beige text-xs uppercase tracking-widest mb-3">
               Contato
             </div>
-            <a href={WHATSAPP} target="_blank" rel="noreferrer" className="flex items-center gap-2 hover:text-champagne transition-colors">
+            <a href={WHATSAPP} target="_blank" rel="noreferrer" className="flex items-center gap-2 hover:text-beige transition-colors">
               <Phone className="size-4" /> WhatsApp
             </a>
             <a
               href="https://instagram.com/adv.thalesataide"
               target="_blank"
               rel="noreferrer"
-              className="flex items-center gap-2 hover:text-champagne transition-colors"
+              className="flex items-center gap-2 hover:text-beige transition-colors"
             >
               <Instagram className="size-4" /> @adv.thalesataide
             </a>
@@ -757,7 +759,7 @@ function Footer() {
             </div>
           </div>
           <div className="text-xs text-offwhite/50 font-sans leading-relaxed">
-            <div className="font-display text-champagne text-xs uppercase tracking-widest mb-3">
+            <div className="font-display text-beige text-xs uppercase tracking-widest mb-3">
               Conformidade
             </div>
             <p>
@@ -769,7 +771,7 @@ function Footer() {
         </div>
         <div className="mt-12 pt-6 border-t border-white/10 flex flex-col md:flex-row justify-between gap-4 text-xs text-offwhite/40 font-sans">
           <span>© {new Date().getFullYear()} Thales de Ataíde Evangelista</span>
-          <span>Feito com cuidado, em Vitória / ES</span>
+          <span>Desenvolvido por @marynomarketing</span>
         </div>
       </div>
     </footer>
