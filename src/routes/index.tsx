@@ -152,8 +152,10 @@ function Hero() {
       <div className="relative mx-auto grid min-h-[150vh] md:min-h-[138vh] max-w-7xl grid-cols-1 gap-6 px-6 pt-16 pb-16 lg:grid-cols-12 lg:gap-4">
         {/* Left: headline, pinned to the bottom so it never sits over his face */}
         <div className="flex flex-col justify-end lg:col-span-8 reveal">
-          <p className="text-[10px] uppercase tracking-[0.3em] text-champagne/80">
-            Especialista em Direito Previdenciário e de Família
+          <p className="text-[9px] leading-tight uppercase tracking-[0.25em] text-champagne/80">
+            Especialista em Direito Previdenciário
+            <br />
+            e de Família
           </p>
           <h1 className="mt-2 font-display text-[34px] leading-[1.06] md:text-[52px] font-medium text-offwhite tracking-[-0.02em]">
             O primeiro passo
@@ -176,8 +178,8 @@ function Hero() {
           </div>
         </div>
 
-        {/* Right: floating contact card, tall and close to the photo */}
-        <div className="flex flex-col justify-end lg:col-span-4 lg:-ml-6 reveal">
+        {/* Right: floating contact card, centered and pulled in toward him */}
+        <div className="flex flex-col justify-center lg:col-span-3 lg:-ml-16 reveal">
           <HeroForm />
         </div>
       </div>
