@@ -152,7 +152,10 @@ function Hero() {
       <div className="relative mx-auto grid min-h-[150vh] md:min-h-[138vh] max-w-7xl grid-cols-1 gap-6 px-6 pt-16 pb-16 lg:grid-cols-12 lg:gap-4">
         {/* Left: headline, pinned to the bottom so it never sits over his face */}
         <div className="flex flex-col justify-end lg:col-span-8 reveal">
-          <h1 className="font-display text-[34px] leading-[1.06] md:text-[52px] font-medium text-offwhite tracking-[-0.02em]">
+          <p className="text-[10px] uppercase tracking-[0.3em] text-champagne/80">
+            Especialista em Direito Previdenciário e de Família
+          </p>
+          <h1 className="mt-2 font-display text-[34px] leading-[1.06] md:text-[52px] font-medium text-offwhite tracking-[-0.02em]">
             O primeiro passo
             <br />
             <span className="text-beige">começa agora.</span>
@@ -175,10 +178,6 @@ function Hero() {
 
         {/* Right: floating contact card, tall and close to the photo */}
         <div className="flex flex-col justify-end lg:col-span-4 lg:-ml-6 reveal">
-          <div className="mb-3 flex items-center gap-2 text-[11px] uppercase tracking-[0.3em] text-champagne">
-            <span className="h-px w-6 bg-champagne/60" />
-            Especialista em Direito Previdenciário e de Família
-          </div>
           <HeroForm />
         </div>
       </div>
@@ -188,7 +187,7 @@ function Hero() {
         <div className="mx-auto grid max-w-7xl grid-cols-2 gap-4 px-6 py-4 text-[11px] text-offwhite/70 font-sans md:grid-cols-4">
           <TrustBadge icon={ShieldCheck} label="Honorários fixos e transparentes" />
           <TrustBadge icon={Sparkles} label="Resposta em até 24h" />
-          <TrustBadge icon={MessageCircle} label="Atendimento presencial e online" />
+          <TrustBadge icon={MessageCircle} label="Presencial e online" />
           <TrustBadge icon={HeartHandshake} label="Atendimento humanizado" />
         </div>
       </div>
