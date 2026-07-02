@@ -140,27 +140,25 @@ function Header() {
 function Hero() {
   return (
     <section id="top" className="relative isolate min-h-screen overflow-hidden">
-      {/* Full-bleed background photo */}
+      {/* Full-bleed background photo, kept fully clear/bright */}
       <img
         src={heroPhoto}
         alt="Thales de Ataíde Evangelista, advogado"
-        className="absolute inset-0 -z-20 h-full w-full object-cover object-[30%_15%]"
+        className="absolute inset-0 -z-20 h-full w-full object-cover object-[30%_8%]"
       />
-      {/* Darkening toward the right, where the contact card sits */}
-      <div className="absolute inset-0 -z-10 bg-gradient-to-r from-navy-deep/35 via-navy-deep/55 to-navy-deep/95" />
-      {/* Bottom black gradient */}
-      <div className="absolute inset-x-0 bottom-0 -z-10 h-2/3 bg-gradient-to-t from-black via-black/60 to-transparent" />
-      {/* Top gradient so header stays legible */}
-      <div className="absolute inset-x-0 top-0 -z-10 h-48 bg-gradient-to-b from-black/60 to-transparent" />
+      {/* Bottom black gradient, only behind the text block so the photo stays clear up top */}
+      <div className="absolute inset-x-0 bottom-0 -z-10 h-[55%] bg-gradient-to-t from-black via-black/70 to-transparent" />
 
-      <div className="relative mx-auto grid min-h-screen max-w-7xl grid-cols-1 gap-10 px-6 pt-36 pb-10 lg:grid-cols-12 lg:gap-8">
-        {/* Left: headline over photo */}
-        <div className="flex flex-col justify-end lg:col-span-7 reveal">
+      <div className="relative mx-auto grid min-h-screen max-w-7xl grid-cols-1 gap-6 px-6 pt-24 pb-10 lg:grid-cols-12 lg:gap-6">
+        {/* Left: headline, pinned to the bottom so it never sits over his face */}
+        <div className="flex flex-col justify-end lg:col-span-8 reveal">
           <div className="inline-flex w-fit items-center gap-2 rounded-full liquid-glass px-4 py-1.5 text-[11px] uppercase tracking-[0.3em] text-champagne">
             Especialista em Direito Previdenciário e de Família
           </div>
           <h1 className="mt-5 font-display text-[38px] leading-[1.05] md:text-[58px] font-medium text-offwhite tracking-[-0.02em]">
-            O primeiro passo <span className="text-beige">começa agora.</span>
+            O primeiro passo
+            <br />
+            <span className="text-beige">começa agora.</span>
           </h1>
           <p className="mt-5 max-w-xl text-lg text-offwhite/80 font-sans font-light leading-relaxed">
             Você chegou até aqui carregando uma dúvida, uma negativa ou uma
@@ -178,8 +176,8 @@ function Hero() {
           </div>
         </div>
 
-        {/* Right: floating liquid glass contact card */}
-        <div className="flex flex-col justify-center lg:col-span-5 reveal">
+        {/* Right: floating liquid glass contact card, tall and close to the photo */}
+        <div className="flex flex-col justify-end lg:col-span-4 reveal">
           <HeroForm />
         </div>
       </div>
@@ -214,7 +212,7 @@ function HeroForm() {
         e.preventDefault();
         window.open(WHATSAPP, "_blank");
       }}
-      className="rounded-3xl liquid-glass p-6 md:p-7"
+      className="w-full max-w-sm rounded-3xl liquid-glass p-6 md:p-7"
     >
       <p className="font-sans text-[11px] uppercase tracking-[0.35em] text-champagne">
         Consulta gratuita
@@ -225,7 +223,7 @@ function HeroForm() {
       <p className="mt-1 text-sm text-offwhite/60 font-sans">
         Conte sua situação — respondo pessoalmente pelo WhatsApp em até 24h.
       </p>
-      <div className="mt-5 grid grid-cols-1 md:grid-cols-2 gap-3">
+      <div className="mt-5 grid grid-cols-1 gap-3">
         <Input placeholder="Seu nome" className="h-11 bg-white/5 border-offwhite/15 text-offwhite placeholder:text-offwhite/40" />
         <Input placeholder="WhatsApp com DDD" className="h-11 bg-white/5 border-offwhite/15 text-offwhite placeholder:text-offwhite/40" />
       </div>
