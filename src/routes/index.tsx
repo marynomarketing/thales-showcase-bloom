@@ -424,18 +424,15 @@ function Acompanhamento() {
     <section className="mx-auto max-w-7xl px-6 pb-24 reveal">
       <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
         <div>
-          <p className="font-sans text-xs uppercase tracking-[0.35em] text-beige">
-            Do início ao fim
-          </p>
-          <h2 className="mt-3 font-display text-4xl md:text-5xl font-medium text-offwhite leading-[1.05]">
-            Acompanhamento
+          <h2 className="font-display text-4xl md:text-5xl font-medium text-offwhite leading-[1.05]">
+            Transparência em cada
             <br />
-            que você <span className="text-beige">sente</span>.
+            etapa do <span className="text-beige">processo</span>.
           </h2>
         </div>
         <p className="max-w-md text-offwhite/60 font-sans font-light">
-          Cada etapa pensada para que você entenda onde está, para onde vai e o
-          que depende de você — sem juridiquês.
+          Você entende o que está acontecendo, por que está acontecendo e o
+          que depende de você.
         </p>
       </div>
       <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-4">
