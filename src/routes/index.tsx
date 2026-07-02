@@ -150,9 +150,11 @@ function Hero() {
             cuidado que você merece.
           </p>
 
-          <div className="mt-10 grid w-fit grid-cols-3 divide-x divide-offwhite/10 rounded-2xl liquid-glass px-2 py-4">
+          <div className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-3">
             <Metric value="OAB/ES" label="40.851" />
+            <span className="h-8 w-px bg-offwhite/20" />
             <Metric value="Grande Vitória" label="Presencial · ES" />
+            <span className="h-8 w-px bg-offwhite/20" />
             <Metric value="Todo Brasil" label="Atendimento online" />
           </div>
         </div>
@@ -240,7 +242,7 @@ function AreaPill({
 
 function Metric({ value, label }: { value: string; label: string }) {
   return (
-    <div className="px-3 text-center">
+    <div>
       <div className="font-display text-lg font-normal text-offwhite">{value}</div>
       <div className="text-[11px] uppercase tracking-widest text-offwhite/50 mt-0.5">
         {label}
